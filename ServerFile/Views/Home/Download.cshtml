@@ -1,0 +1,40 @@
+﻿﻿@model ServerFile.Models.ModelFile
+
+@{
+    ViewBag.Title = "Download";
+       
+}
+
+
+<html>
+<head>
+    <title>Pobierz plik</title>
+</head>
+
+<body>
+    
+ @using (Html.BeginForm()) {
+     @Html.ValidationSummary(true)
+
+
+       <fieldset>
+           <p>
+               Wprowadz ile liczb wygenerowac:
+               @Html.EditorFor(model => model.FileAmount)
+               @Html.ValidationMessageFor(model => model.FileAmount)
+           </p>
+<p>
+               Wprowadz maksymalna wartosc:
+               @Html.EditorFor(model => model.MaxValue)
+               @Html.ValidationMessageFor(model => model.MaxValue)
+           </p>
+<p>
+            <input type="Submit" value="Download" /> 
+        </p>
+
+           </fieldset>
+               }
+
+</body>
+
+</html>
